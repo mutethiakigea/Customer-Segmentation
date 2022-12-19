@@ -1,0 +1,17 @@
+# Import necessary libraries
+import pandas as pd
+
+# Read in the data
+data = pd.read_csv("customer_data.csv")
+
+# Perform basic exploratory data analysis
+print(data.describe())
+
+# Group the data by customer segment
+segments = data.groupby("segment")
+
+# Calculate the average values for each customer segment
+segment_avgs = segments.mean()
+
+# Print the average values for each segment
+print(segment_avgs)
